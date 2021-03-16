@@ -22,9 +22,10 @@ plt.plot(t, gauss)
 plt.show()
 
 # Calcular la transformada rápida de Fourier
-np.fft(gauss)
+gaussfft = np.fft.fft(gauss)
+freq = np.fft.fftfreq(t.shape[0], (tfin-tini)/N) #puede que no estén bien las frecuencias
 
 # Representar la transformada de la gaussiana
-plt.plot(t, gauss)
+plt.plot(freq, np.abs(gaussfft))
 plt.show()
 
